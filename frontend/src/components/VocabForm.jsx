@@ -44,20 +44,21 @@ const VocabForm = ({ vocab, setVocab, editingVocab, setEditingVocab }) => {
       <h1 className="text-2xl font-bold mb-4">{editingVocab ? 'Your Form Name: Edit Operation' : 'Your Form Name: Create Operation'}</h1>
       <input
         type="text"
-        placeholder="Title"
+        placeholder="Word"
         value={formData.word}
         onChange={(e) => setFormData({ ...formData, word: e.target.value })}
         className="w-full mb-4 p-2 border rounded"
       />
       <input
         type="text"
-        placeholder="Description"
+        placeholder="Translation"
         value={formData.translation}
         onChange={(e) => setFormData({ ...formData, translation: e.target.value })}
         className="w-full mb-4 p-2 border rounded"
       />
       <input
         type="text"
+        placeholder="Example"
         value={formData.example}
         onChange={(e) => setFormData({ ...formData, example: e.target.value })}
         className="w-full mb-4 p-2 border rounded"
