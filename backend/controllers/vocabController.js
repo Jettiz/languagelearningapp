@@ -32,14 +32,14 @@ const addVocab = async (req, res) => {
 const updateVocab = async ( req, res) => {
 const { word, translation, example } = req.body;
 try {
-const vocab = await Vocab.findById(req.params.id);
-if (!vocab) return res.status(404).json({ message: 'Vocab not found' });
+    const vocab = await Vocab.findById(req.params.id);
+    if (!vocab) return res.status(404).json({ message: 'Vocab not found' });
 
-vocab.word = title || vocab.word;
-vocab.translation = translation || vocab.translation;
-vocab.example = example || vocab.example;
+    vocab.word = word || vocab.word;
+    vocab.translation = translation || vocab.translation;
+    vocab.example = example || vocab.example;
 
-const updatedVocab = await vocab.save();
+    const updatedVocab = await vocab.save();
 res.json(updatedVocab);
 } catch (error) {
 res.status(500).json({ message: error.message });
