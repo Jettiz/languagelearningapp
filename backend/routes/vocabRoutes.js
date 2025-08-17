@@ -1,9 +1,9 @@
 const express = require('express');
-const { getGrammar, addGrammar, updateGrammar, deleteGrammar } = require('../controllers/grammarController');
+const { getVocab, addVocab, updateVocab, deleteVocab } = require('../controllers/vocabController');
 const { protect } = require('../middleware/authMiddleware');
 const router = express.Router();
 
-router.route('/').get(protect, getGrammar).post(protect, addGrammar);
-router.route('/:id').put(protect, updateGrammar).delete(protect, deleteGrammar);
+router.route('/').get(protect, getVocab).post(protect, addVocab);
+router.route('/:id').put(protect, updateVocab).delete(protect, deleteVocab);
 
 module.exports = router;
