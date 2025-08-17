@@ -8,7 +8,7 @@ const getGrammar = async (req, res)=> {
     
 try {
     
-const grammar = await Grammar.find({ userId: req.user.id});
+const grammar = await GrammarParts.find({ userId: req.user.id});
 
 res.json(grammar);
 
