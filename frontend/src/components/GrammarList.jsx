@@ -19,7 +19,7 @@ const GrammarPartList = ({ grammar, setGrammarPart, setEditingGrammarPart }) => 
     <div>
       {grammar.map((grammar) => (
         <div key={grammar._id} className="bg-gray-100 p-4 mb-4 rounded shadow">
-          <h2 className="font-bold">{grammar.grammar}</h2>
+          <h2 className="font-bold">{grammar.grammarPart}</h2>
           <p>{grammar.meaning}</p>
           <p className="text-sm text-gray-500">Example {grammar.example}</p>
           <div className="mt-2">

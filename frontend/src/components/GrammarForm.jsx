@@ -4,13 +4,13 @@ import axiosInstance from '../axiosConfig';
 
 const GrammarPartForm = ({ grammar, setGrammarPart, editingGrammarPart, setEditingGrammarPart }) => {
   const { user } = useAuth();
-  const [formData, setFormData] = useState({ word: '', translation: '', example: '' });
+  const [formData, setFormData] = useState({ grammarPart: '', meaning: '', example: '' });
 
   useEffect(() => {
     if (editingGrammarPart) {
       setFormData({
-        word: editingGrammarPart.word,
-        translation: editingGrammarPart.translation,
+        grammarPart: editingGrammarPart.grammarPart,
+        meaning: editingGrammarPart.meaning,
         example: editingGrammarPart.example,
       });
     } else {
@@ -33,7 +33,7 @@ const GrammarPartForm = ({ grammar, setGrammarPart, editingGrammarPart, setEditi
         setGrammarPart([...grammar, response.data]);
       }
       setEditingGrammarPart(null);
-      setFormData({ word: '', translation: '', example: '' });
+      setFormData({ grammarPart: '', meaning: '', example: '' });
     } catch (error) {
       alert('Failed to save grammar.');
     }
@@ -45,7 +45,7 @@ const GrammarPartForm = ({ grammar, setGrammarPart, editingGrammarPart, setEditi
       <input
         type="text"
         placeholder="New Grammar"
-        value={formData.grammar}
+        value={formData.grammarPart}
         onChange={(e) => setFormData({ ...formData, grammar: e.target.value })}
         className="w-full mb-4 p-2 border rounded"
       />

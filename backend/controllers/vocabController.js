@@ -11,7 +11,9 @@ try {
 const vocab = await Vocab.find({ userId: req.user.id });
 
 res.json(vocab);
+
 } catch (error) {
+    
 res.status(500).json({ message: error.message });}};
 
 // Create Vocab Card

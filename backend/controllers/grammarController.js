@@ -2,17 +2,19 @@ const Grammar = require('../models/Grammar');
 const jwt = require('jsonwebtoken');
 
 // Read Grammar Card
+ 
 
-
-const getGrammar = async (req, res) => {
-
+const getGrammar = async (req, res)=> {
+    
 try {
+    
+const grammar = await Grammar.find({ userId: req.user.id});
 
-const grammar = await Grammar.find({ userId: req.user.id });
+res.json(grammar);
 
-res.json(Grammar);
 } catch (error) {
-res.status(500).json({ message: error.message });}};
+
+res.status(500).json({message: error.message});}}
 
 // Create Grammar Card
 
