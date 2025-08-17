@@ -44,16 +44,16 @@ const GrammarPartForm = ({ grammar, setGrammarPart, editingGrammarPart, setEditi
       <h1 className="text-2xl font-bold mb-4">{editingGrammarPart ? 'Your Form Name: Edit Operation' : 'Your Form Name: Create Operation'}</h1>
       <input
         type="text"
-        placeholder="Word"
-        value={formData.word}
-        onChange={(e) => setFormData({ ...formData, word: e.target.value })}
+        placeholder="New Grammar"
+        value={formData.grammar}
+        onChange={(e) => setFormData({ ...formData, grammar: e.target.value })}
         className="w-full mb-4 p-2 border rounded"
       />
       <input
         type="text"
-        placeholder="Translation"
-        value={formData.translation}
-        onChange={(e) => setFormData({ ...formData, translation: e.target.value })}
+        placeholder="Explaination"
+        value={formData.meaning}
+        onChange={(e) => setFormData({ ...formData, meaning: e.target.value })}
         className="w-full mb-4 p-2 border rounded"
       />
       <input
